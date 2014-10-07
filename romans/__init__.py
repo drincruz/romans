@@ -30,20 +30,24 @@ class RomanNumConverter(object):
             self.__roman in self.__ROMANS_MAP):
                 return self.__ROMANS_MAP[self.__roman]
 
-        val = 0
-        chars = list(self.__roman)
-        i = 0
-        while i < len(chars)-1:
-            if self.__ROMANS_MAP[chars[i]] >= self.__ROMANS_MAP[chars[i+1]]:
-                val += self.__ROMANS_MAP[chars[i]]
+        # Initialize index, i and value, val
+        i, val = 0, 0
+
+        # Iterate through Roman numeral
+        while i < len(self.__roman)-1:
+            # If the value of the first character is greater than
+            # the value of the next one, just add the value
+            if self.__ROMANS_MAP[self.__roman[i]] >= self.__ROMANS_MAP[self.__roman[i+1]]:
+                val += self.__ROMANS_MAP[self.__roman[i]]
                 i += 1
-            #else self.__ROMANS_MAP[chars[i]] < self.__ROMANS_MAP[chars[i+1]]:
+            # Else, add the difference between the two
             else:
-                val += (self.__ROMANS_MAP[chars[i+1]] - self.__ROMANS_MAP[chars[i]])
+                val += (self.__ROMANS_MAP[self.__roman[i+1]] - self.__ROMANS_MAP[self.__roman[i]])
                 i += 2
 
-        if i != len(chars):
-            val += self.__ROMANS_MAP[chars[i]]
+        # If we have left over characters to parse,
+        # just add that to the val
+        if i != len(self.__roman):
+            val += self.__ROMANS_MAP[self.__roman[i]]
 
         return val
-
