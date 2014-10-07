@@ -86,6 +86,18 @@ class TestRomans(unittest.TestCase):
         roman = RomanNumConverter('MCMIV')
         self.assertEqual(1904, roman.to_integer())
 
+    def test_1954(self):
+        roman = RomanNumConverter('MCMLIV')
+        self.assertEqual(1954, roman.to_integer())
+
+    def test_1990(self):
+        roman = RomanNumConverter('MCMXC')
+        self.assertEqual(1990, roman.to_integer())
+
+    def test_2014(self):
+        roman = RomanNumConverter('MMXIV')
+        self.assertEqual(2014, roman.to_integer())
+
     def tearDown(self):
         pass
 
