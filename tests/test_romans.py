@@ -10,7 +10,7 @@ Tests for `romans` module.
 
 import unittest
 
-from romans import romans
+from romans import RomanNumConverter
 
 
 class TestRomans(unittest.TestCase):
@@ -18,8 +18,17 @@ class TestRomans(unittest.TestCase):
     def setUp(self):
         pass
 
-    def test_something(self):
-        pass
+    def test_single_char_romans(self):
+        roman = RomanNumConverter('I')
+        self.assertEqual(1, roman.to_integer())
+
+    def test_single_char_roman_x(self):
+        roman = RomanNumConverter('X')
+        self.assertEqual(10, roman.to_integer())
+
+    def test_add_combined_romans(self):
+        roman = RomanNumConverter('II')
+        self.assertEqual(2, roman.to_integer())
 
     def tearDown(self):
         pass
