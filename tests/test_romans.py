@@ -30,6 +30,14 @@ class TestRomans(unittest.TestCase):
         roman = RomanNumConverter('II')
         self.assertEqual(2, roman.to_integer())
 
+    def test_add_combined_romans_3(self):
+        roman = RomanNumConverter('III')
+        self.assertEqual(3, roman.to_integer())
+
+    def test_subtract_combined_romans(self):
+        roman = RomanNumConverter('IV')
+        self.assertEqual(4, roman.to_integer())
+
     def tearDown(self):
         pass
 

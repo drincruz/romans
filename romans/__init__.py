@@ -27,3 +27,12 @@ class RomanNumConverter(object):
         if (len(self.__roman) == 1 and
             self.__roman in self.__ROMANS_MAP):
                 return self.__ROMANS_MAP[self.__roman]
+
+        val = self.__ROMANS_MAP[self.__roman[0]]
+        for ch in self.__roman[1:]:
+            if val >= self.__ROMANS_MAP[ch]:
+                val += self.__ROMANS_MAP[ch]
+            if val < self.__ROMANS_MAP[ch]:
+                val = -val + self.__ROMANS_MAP[ch]
+
+        return val
