@@ -14,7 +14,7 @@ Roman Numeral Converter
 
 Roman Numeral Converter converts Roman numerals.
 
-* Free software: BSD license
+* Free software: MIT license
 * Documentation: https://romans.readthedocs.org.
 
 Features
