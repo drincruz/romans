@@ -19,10 +19,12 @@ class RomanNumConverter(object):
             'M': 1000
         }
 
-    def __add_chars(self, r0, r1):
-        return self.__ROMANS_MAP[r0] + self.__ROMANS_MAP[r1]
-
     def to_integer(self):
+        """
+        Convert the Roman numeral to an integer
+
+        :return:
+        """
         # Convert one-character Roman numeral
         if (len(self.__roman) == 1 and
             self.__roman in self.__ROMANS_MAP):
